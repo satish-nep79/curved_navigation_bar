@@ -20,6 +20,10 @@ class CurvedNavigationBar extends StatefulWidget {
   final Duration animationDuration;
   final double height;
   final double? maxWidth;
+  final TextStyle? activeLabelStyle;
+  final TextStyle? inActiveLabelStyle;
+  final bool? showActiveLabel;
+  final bool? showInactiveLabel;
 
   CurvedNavigationBar({
     Key? key,
@@ -34,6 +38,10 @@ class CurvedNavigationBar extends StatefulWidget {
     this.animationDuration = const Duration(milliseconds: 600),
     this.height = 75.0,
     this.maxWidth,
+    this.activeLabelStyle,
+    this.inActiveLabelStyle,
+    this.showActiveLabel,
+    this.showInactiveLabel,
   })  : letIndexChange = letIndexChange ?? ((_) => true),
         assert(items.isNotEmpty),
         assert(0 <= index && index < items.length),
@@ -175,11 +183,11 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                               length: _length,
                               index: widget.items.indexOf(item),
                               child: Center(child: item.child),
-                              activeLabelStyle: item.activeLabelStyle,
-                              inActiveLabelStyle: item.inActiveLabelStyle,
+                              activeLabelStyle: widget.activeLabelStyle,
+                              inActiveLabelStyle: widget.inActiveLabelStyle,
                               label: item.label,
-                              showActiveLabel: item.showActiveLabel,
-                              showInactiveLabel: item.showInactiveLabel,
+                              showActiveLabel: widget.showActiveLabel,
+                              showInactiveLabel: widget.showInactiveLabel,
                             );
                           }).toList())),
                     ),

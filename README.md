@@ -44,15 +44,16 @@ Scaffold(
 `height`: Height of NavigationBar, min 0.0, max 75.0\
 `maxWidth`: Allows to set the width of the navigation bar lower than the entire screen width by default\
 `letIndexChange`: Function which takes page index as argument and returns bool. If function returns false then page is not changed on button tap. It returns true by default\
+`activeLabelStyle`: Label Style for the active curved bar item. Optional\
+`inActiveLabelStyle`: Label Style for the inactive curved bar item. Optional\
+`showActiveLabel`: If true shows the label for active curved bar item, default false\
+`showInactiveLabel`: If true shows the label for inactive curved bar item, default false\
 
 #### CurvedBarItem Attribute
 
 `child`: Widget for rendering curved bar item\
 `label`: label of the bar curved bar item. Is Optional,
-`activeLabelStyle`: Label Style for the active curved bar item. Optional\
-`inActiveLabelStyle`: Label Style for the inactive curved bar item. Optional\
-`showActiveLabel`: If true shows the label for active curved bar item, default false\
-`showInactiveLabel`: If true shows the label for inactive curved bar item, default false\
+
 
 ### Change page programmatically
 
